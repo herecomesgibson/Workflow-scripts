@@ -1,5 +1,5 @@
 
-Portions of a python script written to call the Logrythm API from the command line. 
+#Portions of a python script written to call the Logrythm API from the command line. 
 
 #!/usr/bin/env python3
 
@@ -213,7 +213,7 @@ def main():
 
         #print('Number of logs returned by search:  ' + str(len(responselst)))
 
-        user_identikey = "giol2710"
+        user_identikey = "[REDACTED]"
 
         response = do_search( create_json( identikey= user_identikey ), saveOutput= True )
 
@@ -229,7 +229,7 @@ if '__main__' == '__main__':
 
 
 
-Script for taking cred dumps and checking user passwords to see if the account is now compramised.
+#Script for taking cred dumps and checking user passwords to see if the account is now compramised.
 
 
 
@@ -284,7 +284,7 @@ def email2identikey(email,password):
 def identikey_password_check(identikey,password):
         print("Testing credentials for uid:" + identikey)
         #creates list of commands to feed into check_output to run ldap
-        searchstrlst = ['ldapsearch', '-x', '-H', '[REDACTED](URL)', '-b', 'ou=users,dc=colorado,dc=edu', '-D', 'uid=' + identikey + ',ou=users,dc=colorado,dc=edu', '-w', password, 'sid=' + identikey]
+        searchstrlst = [REDACTED]
         #try/except statement circumvents ldapsearch's non 0 exit status, which otherwise creates an exception. So in practice i think this raises the exception everytime, could definately be improved
         try:
                 output=subprocess.check_output(searchstrlst, universal_newlines=True, stderr=subprocess.STDOUT)
